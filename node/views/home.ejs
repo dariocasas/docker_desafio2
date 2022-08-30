@@ -1,0 +1,104 @@
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Cycle Rocks!</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 40px
+    }
+
+    .id {
+        text-align: right;
+    }
+
+    #erro {
+        margin: 50px;
+        padding: 50px;
+        align-self: center;
+        font-size: 30px;
+        font-family: Roboto;
+        font-weight: 800;
+        letter-spacing: 5px;
+        color: white;
+        background-color: red;
+    }
+
+    #logo {
+        width: 70px;
+        padding-left: 150px;
+    }
+
+    #tabela {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        min-width: 100px;
+    }
+
+    #tabela td,
+    #tabela th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #tabela tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #tabela tr:hover {
+        background-color: #ddd;
+    }
+
+    #tabela th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+
+    <h1>Docker desafio 2
+        <img src="/images/Moby-logo.webp" id="logo">
+    </h1>
+
+    <form action="/" method="post">
+        <label for="username">Entre com nome de usuário:</label>
+        <input type="text" id="username" name="username" value="">
+        <input type="submit" value="Submit">
+    </form>
+
+    <% if (msg!=='' ) {%>
+        <p id="erro">
+            <%= msg %>
+        </p>
+
+        <% } %>
+
+            <% if ( (users) && (users.length>0 )) {%>
+                <table id="tabela">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                    </tr>
+
+                    <% for(var i=0; i<users.length; i++) {%>
+                        <tr>
+                            <td>
+                                <%= users[i].id %>
+                            </td>
+                            <td>
+                                <%= users[i].username %>
+                            </td>
+                        </tr>
+                        <% } %>
+
+                </table>
+                <% } %>
+</body>

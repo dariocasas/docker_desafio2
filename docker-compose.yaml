@@ -3,9 +3,6 @@ version: '3'
 services:
 
   node:
-    build:
-      context: node
-      dockerfile: Dockerfile
     image: darioeliseo/node
     container_name: node
     networks:
@@ -21,9 +18,6 @@ services:
     command: node index.js
 
   db:
-    build:
-      context: db
-      dockerfile: Dockerfile
     image: darioeliseo/db
     container_name: db
     restart: always
@@ -40,9 +34,6 @@ services:
     command: --innodb-use-native-aio=0
 
   nginx:
-    build:
-      context: nginx
-      dockerfile: Dockerfile
     image: darioeliseo/nginx
     container_name: nginx
     depends_on:
